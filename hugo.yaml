@@ -1,4 +1,11 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: My New Hugo Site
+title: Péter Frank Csoór - Blog
 theme: ["PaperMod"]
+
+params:
+  homeInfoParams:
+    Title: Hi there!
+    Content: Can be Info, links, about...
+
+    ShowCodeCopyButtons: true
