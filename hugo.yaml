@@ -1,11 +1,14 @@
 baseURL: https://example.org/
 languageCode: en-us
-title: Péter Frank Csoór - Blog
+title: Peter Frank Csoor - Blog
 theme: ["PaperMod"]
 
 params:
+  assets:
+    customCSS: ["css/custom.css"]
   homeInfoParams:
-    Title: Hi there!
-    Content: Can be Info, links, about...
+    Title: Hi there! - It's great to have you!
+    Content: I'm Peter, a software engineer living and coding in Hungary.
 
-    ShowCodeCopyButtons: true
+  ShowCodeCopyButtons: true
+  ShowPostsOnHomePage: true
