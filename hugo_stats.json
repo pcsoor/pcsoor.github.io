@@ -1,0 +1,62 @@
+{
+  "htmlElements": {
+    "tags": [
+      "a",
+      "article",
+      "body",
+      "button",
+      "circle",
+      "div",
+      "footer",
+      "h1",
+      "h2",
+      "head",
+      "header",
+      "html",
+      "li",
+      "line",
+      "link",
+      "main",
+      "meta",
+      "nav",
+      "noscript",
+      "p",
+      "path",
+      "script",
+      "span",
+      "style",
+      "svg",
+      "title",
+      "ul"
+    ],
+    "classes": [
+      "entry-content",
+      "entry-footer",
+      "entry-header",
+      "entry-hint-parent",
+      "entry-link",
+      "first-entry",
+      "footer",
+      "header",
+      "home-info",
+      "list",
+      "logo",
+      "logo-switches",
+      "main",
+      "nav",
+      "not-found",
+      "post-entry",
+      "social-icons",
+      "text-center",
+      "top-link"
+    ],
+    "ids": [
+      "menu",
+      "moon",
+      "sun",
+      "theme-toggle",
+      "top",
+      "top-link"
+    ]
+  }
+}
