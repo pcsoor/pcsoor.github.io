@@ -1,5 +1,5 @@
 ---
-title: "Full Text Search Engine With Postgresql"
+title: "Optimizing PostgreSQL Full-Text Search: Indexing, Ranking, and Speed"
 date: 2025-05-14T12:35:47+02:00
 draft: false
 ignore: true
