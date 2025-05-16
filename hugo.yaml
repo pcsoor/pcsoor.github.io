@@ -1,21 +1,10 @@
 baseURL: https://pcsoor.github.io/
 languageCode: en-us
-title: Peter Frank Csoor - Blog
+title: Péter Csoór - Blog
 theme: ["PaperMod"]
 googleAnalytics:  G-LC2ZEG0VDE
 
 sectionPagesMenu: main
-
-
-main:
-  menu:
-    - name: About
-      url: /about/
-      weight: 10
-  footer:
-    - name: about
-      url: /about/
-      weight: 10
 
 params:
   ShowCodeCopyButtons: true
@@ -25,11 +14,11 @@ params:
   assets:
     customCSS: ["css/custom.css"]
 
-  author: Peter Frank Csoor
+  author: Péter Csoór
 
   homeInfoParams:
     Title: Hi there! - It's great to have you!
-    Content: I'm Peter, a software engineer living and coding in Hungary.
+    Content: I'm Péter, a software engineer living and coding in Hungary.
 
   navbar:
     displayTitle: true

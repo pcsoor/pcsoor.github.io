@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head>
-	<meta name="generator" content="Hugo 0.147.3"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Péter Csoór - Blog</title>
-
-<meta name="description" content="">
+<title>About | Péter Csoór - Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="About - Péter Csoór - Blog">
 <meta name="author" content="Péter Csoór">
-<link rel="canonical" href="http://localhost:1313/">
+<link rel="canonical" href="http://localhost:1313/about/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.2794fc6f9882c552d7185b00b67bbb50d4ea447693a1f1cd15c37d1f565d07a1.css" integrity="sha256-J5T8b5iCxVLXGFsAtnu7UNTqRHaTofHNFcN9H1ZdB6E=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -19,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/about/">
 <noscript>
     <style>
         #theme-toggle,
@@ -75,7 +73,7 @@
 
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -116,6 +114,11 @@
         </div>
         <ul id="menu">
             <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span class="active">About</span>
+                </a>
+            </li>
+            <li>
                 <a href="http://localhost:1313/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
@@ -123,46 +126,23 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<article class="first-entry home-info">
-    <header class="entry-header">
-        <h1>Hi there! - It&rsquo;s great to have you!</h1>
-    </header>
-    <div class="entry-content">
-        I&rsquo;m Péter, a software engineer living and coding in Hungary.
-    </div>
-    <footer class="entry-footer">
-        <div class="social-icons" >
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      About
+    </h1>
+    <div class="post-meta">0 min&nbsp;·&nbsp;Péter Csoór
+
 </div>
+  </header> 
 
-    </footer>
-</article>
-
-<h2>Latest posts</h2>
-<br>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Full Text Search Engine With Postgresql
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Discovering full-text search possibilities with PostgreSQL</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-05-14 12:35:47 +0200 CEST'>May 14, 2025</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Péter Csoór</footer>
-  <a class="entry-link" aria-label="post link to Full Text Search Engine With Postgresql" href="http://localhost:1313/posts/full-text-search-engine-with-postgresql/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Hello World
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Gotta start somewhere.</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-05-14 12:19:39 +0200 CEST'>May 14, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Péter Csoór</footer>
-  <a class="entry-link" aria-label="post link to Hello World" href="http://localhost:1313/posts/hello-world/"></a>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     
@@ -234,6 +214,53 @@
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

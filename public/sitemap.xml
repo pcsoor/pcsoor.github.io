@@ -14,8 +14,6 @@
     <loc>http://localhost:1313/posts/hello-world/</loc>
     <lastmod>2025-05-14T12:19:39+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
