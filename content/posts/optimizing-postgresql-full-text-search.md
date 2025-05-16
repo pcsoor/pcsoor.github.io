@@ -29,7 +29,7 @@ WHERE to_tsvector('english', title) @@ to_tsquery('english', 'DHH')
 GROUP BY post_type
 ORDER BY post_type;
 ```
-While PostgreSQL used the index (_Bitmap Index Scan on title_gin), the query was still slow.
+While PostgreSQL used the index (_Bitmap Index Scan on title_gin_), the query was still slow.
 
 The key issue: the `tsvector` was being recalculated on the fly during the query. This means PostgreSQL had to compute `to_tsvector('english', title)` for every matching row, which is CPU-intensive and inefficient.
 
@@ -122,7 +122,7 @@ One clever ranking optimization technique I came across (and really liked) is to
 Yes, slightly. But here is a tradeoff:
 
 - If your query returns 100,000+ matches, do you really care about perfectly ranking every one?
-- Or would you rather get a good enough top 10 in 15 ms instead of 2000 ms?
+- Or would you rather get a good enough top 10 in ~50 ms instead of ~2000 ms?
 
 With this new approach, the query looks like this:
 

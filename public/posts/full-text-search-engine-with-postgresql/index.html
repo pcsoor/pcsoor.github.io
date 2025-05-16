@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Optimizing PostgreSQL Full-Text Search: Indexing, Ranking, and Speed | Péter Csoór - Blog</title>
+<title>Full Text Search Engine With Postgresql | Péter Csoór - Blog</title>
 <meta name="keywords" content="">
 <meta name="description" content="Discovering full-text search possibilities with PostgreSQL">
 <meta name="author" content="Péter Csoór">
@@ -127,7 +127,13 @@
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Optimizing PostgreSQL Full-Text Search: Indexing, Ranking, and Speed
+      Full Text Search Engine With Postgresql
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
     </h1>
     <div class="post-meta"><span title='2025-05-14 12:35:47 +0200 CEST'>May 14, 2025</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Péter Csoór
 
@@ -145,7 +151,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> to_tsvector(<span style="color:#e6db74">&#39;english&#39;</span>, title) <span style="color:#f92672">@@</span> to_tsquery(<span style="color:#e6db74">&#39;english&#39;</span>, <span style="color:#e6db74">&#39;DHH&#39;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> post_type
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> post_type;
-</span></span></code></pre></div><p>While PostgreSQL used the index (_Bitmap Index Scan on title_gin), the query was still slow.</p>
+</span></span></code></pre></div><p>While PostgreSQL used the index (<em>Bitmap Index Scan on title_gin</em>), the query was still slow.</p>
 <p>The key issue: the <code>tsvector</code> was being recalculated on the fly during the query. This means PostgreSQL had to compute <code>to_tsvector('english', title)</code> for every matching row, which is CPU-intensive and inefficient.</p>
 <p>The execution plan warns us about it too:</p>
 <pre tabindex="0"><code>Recheck Cond: (to_tsvector(&#39;english&#39;, title) @@ &#39;&#39;&#39;dhh&#39;&#39;&#39;::tsquery)
@@ -223,7 +229,7 @@
 <p>Yes, slightly. But here is a tradeoff:</p>
 <ul>
 <li>If your query returns 100,000+ matches, do you really care about perfectly ranking every one?</li>
-<li>Or would you rather get a good enough top 10 in 15 ms instead of 2000 ms?</li>
+<li>Or would you rather get a good enough top 10 in ~50 ms instead of ~2000 ms?</li>
 </ul>
 <p>With this new approach, the query looks like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> sample_query <span style="color:#66d9ef">AS</span> (
